@@ -1,0 +1,14 @@
+<form #form = "ngForm" (ngSubmit)="addProduct(form.value)">
+  <input name="name" ngModel type="text" class="product">
+  <input name="price" ngModel type="text" class="product">
+  <input name="description" ngModel type="text" class="product">
+  <button type="submit">Submit</button>
+</form>
+<pre>{{ form.value | json }}</pre>
+
+<table>
+  <tr *ngFor="let product of products; index as i">
+      <app-each-product [eachproduct]="product"></app-each-product>
+  </tr>
+</table>
+
